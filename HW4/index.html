@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Story</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+
+    <h1>Exploring the World</h1>
+    <br>
+
+    <div class="image-container">
+        <img src="./images/start.jpg" id="mainImage" alt="Story Image">
+    </div>
+
+    <div id="question">
+        <br>
+        Would you like to explore the Mountain or the Ocean?
+        <br>
+        The choice is up to you.
+    </div>
+
+    <br>
+
+    
+    <div class="input-container">
+       
+        <input type="text" id="choice" placeholder="Please enter Mountain or Ocean">
+        <button id="btnSubmit" onclick="getChoice1();">Click to continue</button>
+
+        
+        <input type="text" id="choice2" placeholder="Enter text " style="display: none;">
+        <button id="btnSubmit2" onclick="getChoice2();" style="display: none;">Click to continue</button>
+
+        
+        <input type="text" id="choice3" placeholder="Enter text " style="display: none;">
+        <button id="btnSubmit3" onclick="getChoice3();" style="display: none;">Click to continue</button>
+
+       
+        <input type="text" id="choice4" placeholder="Enter text" style="display: none;">
+        <button id="btnSubmit4" onclick="getChoice4();" style="display: none;">Click to continue</button>
+
+        
+        <input type="text" id="choice5" placeholder="Enter text " style="display: none;">
+        <button id="btnSubmit5" onclick="getChoice5();" style="display: none;">Click to continue</button>
+    </div>
+
+    <br><br>
+
+    
+    <button onclick="restartStory();" class="restart-btn">
+        Restart Story
+    </button>
+
+</body>
+</html>
