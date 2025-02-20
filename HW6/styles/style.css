@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #020b24;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.divTable {
+    display: table;
+    margin: auto;
+}
+
+.divTableRow {
+    display: table-row;
+}
+
+.divTableCell {
+    display: table-cell;
+    padding: 20px;
+}
+
+img {
+    width: 200px; 
+    height: 250px; 
+    border: 3px solid #444; 
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+img:hover {
+    transform: scale(1.15);
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+}
+
+h1 {
+    color: rgb(186, 168, 204);
+    position: absolute;
+    top: 50px;
+    font-size: 50px;
+}
+
+h2 {
+    color: rgb(186, 168, 204);
+    font-size: 26px;
+    font-weight: bold;
+    position: relative;
+    margin: 20px 0;
+    text-align: center;
+}
+
+
+button {
+    margin: 15px;
+    padding: 15px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #09335f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 50px;
+    left: 49.5%;
+    transform: translateX(-50%);
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#victoryMessage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    font-weight: bold;
+    color: gold;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.card {
+    width: 160px; 
+    height: 220px; 
+    perspective: 1000px; 
+    margin: 10px; 
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-back {
+    background-color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Fade-out animation for matched cards */
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
