@@ -1,0 +1,43 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #fdf6e3; /* optional: nice soft background */
+}
+
+#myCanvas {
+  border: 15px solid black;
+  background-color: beige;
+}
+#top-ui {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-bottom: 2px solid #ccc;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+#score {
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+#resetBtn {
+  font-size: 18px;
+  padding: 6px 14px;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+}
+
+#resetBtn:hover {
+  background-color: #e0e0e0;
+}

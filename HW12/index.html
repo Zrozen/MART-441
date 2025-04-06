@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <title>Canvas</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/squareclass.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+   <!-- UI Centered at the Very Top -->
+<div id="top-ui">
+    <span id="score">Score: 0</span>
+    <button id="resetBtn">Reset</button>
+  </div>
+  
+  
+    <!-- Background Music -->
+    <audio autoplay loop>
+      <source src="music/background.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  
+    <!-- Sound Effect -->
+    <audio id="collisionSound">
+      <source src="music/collision.ogg" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  
+    <!-- Game Canvas -->
+    <canvas id="myCanvas" height="600" width="800"
+      style="display: block; margin: 0 auto; border: 2px solid black;"></canvas>
+  
+    <!-- Game Script -->
+    <script src="js/main.js"></script>
+  </body>
+  
+</html>
