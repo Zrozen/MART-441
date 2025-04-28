@@ -1,0 +1,255 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #020b24;
+    margin: 0;
+}
+
+/* Layout */
+#gameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+}
+
+#gameBoard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    column-gap: 20px; 
+    row-gap: 30px;    
+    margin-top: 100px;
+    width: 90vw;
+    max-width: 1200px;
+    max-height: 80vh;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+
+/* Header and Timer */
+#header {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: rgb(186, 168, 204);
+    font-size: 50px;
+    margin: 0;
+}
+
+#timer {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 5px;
+    color: white;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+}
+
+/* Reset Button */
+button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #09335f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Victory Message */
+#victoryMessage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    font-weight: bold;
+    color: gold;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+}
+
+/* Card and Flip */
+.card {
+    width: 160px;
+    height: 220px;
+    perspective: 1000px;
+    margin: 5px;
+}
+.hidden {
+    opacity: 0;
+}
+
+/* Card Inner */
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease-in-out;
+}
+
+.slide-in {
+    animation: slideIn 0.3s forwards; 
+}
+
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front and Back Faces */
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-back {
+    background-color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Card Images */
+img {
+    width: 200px;
+    height: 250px;
+    border: 3px solid #444;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Animations */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@keyframes sparkle {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+
+
+/* Animation Classes */
+.pulsing {
+    animation: pulse 1.5s infinite;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.sparkle {
+    animation: sparkle 0.5s ease-out;
+}
+
+.sparkle-shrink {
+    animation: sparkleShrink 0.6s forwards;
+}
+
+/* Hide matched cards */
+.matched {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none; /* prevent ghost clicks */
+  }
+  
+  
+/* Slide In Delay Classes */
+.card-inner.delay-0 { animation-delay: 0s; }
+.card-inner.delay-1 { animation-delay: 0.05s; }
+.card-inner.delay-2 { animation-delay: 0.1s; }
+.card-inner.delay-3 { animation-delay: 0.15s; }
+.card-inner.delay-4 { animation-delay: 0.2s; }
+.card-inner.delay-5 { animation-delay: 0.25s; }
+.card-inner.delay-6 { animation-delay: 0.3s; }
+.card-inner.delay-7 { animation-delay: 0.35s; }
+.card-inner.delay-8 { animation-delay: 0.4s; }
+.card-inner.delay-9 { animation-delay: 0.45s; }
+.card-inner.delay-10 { animation-delay: 0.5s; }
+.card-inner.delay-11 { animation-delay: 0.55s; }
+.card-inner.delay-12 { animation-delay: 0.6s; }
+.card-inner.delay-13 { animation-delay: 0.65s; }
+.card-inner.delay-14 { animation-delay: 0.7s; }
+.card-inner.delay-15 { animation-delay: 0.75s; }
+.card-inner.delay-16 { animation-delay: 0.8s; }
+.card-inner.delay-17 { animation-delay: 0.85s; }
+
+
+#startMessagePlaceholder {
+    height: 50px; /* Reserve space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .start-message {
+    font-size: 32px;
+    font-weight: bold;
+    color: gold;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .start-message.visible {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  
